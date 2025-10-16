@@ -1,0 +1,322 @@
+/* Dashboard Container */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Main Content Grid */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 32px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-header button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-header button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Form Wrappers */
+.agent-form-wrapper,
+.upload-list-wrapper {
+  background: white;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.agent-form-wrapper {
+  animation-delay: 0s;
+}
+
+.upload-list-wrapper {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+.agent-form-wrapper h2,
+.upload-list-wrapper h2 {
+  font-size: 26px;
+  color: #2d3748;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.agent-form-wrapper h2::after,
+.upload-list-wrapper h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 10px 0 24px 0;
+  border-radius: 2px;
+}
+
+/* Form Styles */
+.agent-form-wrapper form,
+.upload-list-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Fields */
+.agent-form-wrapper input,
+.upload-list-wrapper input[type="file"] {
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2d3748;
+  background-color: #f8f9fa;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.agent-form-wrapper input:focus,
+.upload-list-wrapper input[type="file"]:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.agent-form-wrapper input::placeholder,
+.upload-list-wrapper input::placeholder {
+  color: #a0aec0;
+  font-weight: 500;
+}
+
+/* File Input Button */
+.upload-list-wrapper input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.upload-list-wrapper input[type="file"]::file-selector-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.upload-list-wrapper input[type="file"] {
+  border: 2px dashed #667eea;
+}
+
+/* Buttons */
+.agent-form-wrapper button,
+.upload-list-wrapper button {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  margin-top: 8px;
+}
+
+.agent-form-wrapper button:hover:not(:disabled),
+.upload-list-wrapper button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4);
+}
+
+.agent-form-wrapper button:active:not(:disabled),
+.upload-list-wrapper button:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+}
+
+/* Disabled State */
+.upload-list-wrapper button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.upload-list-wrapper button:disabled::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 1.5s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Messages */
+.success-message {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  color: #1a5f3f;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-top: 16px;
+  font-weight: 600;
+  animation: slideDown 0.4s ease-out;
+  box-shadow: 0 4px 12px rgba(132, 250, 176, 0.2);
+}
+
+.error-message {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-top: 16px;
+  font-weight: 600;
+  animation: shake 0.5s ease-in-out;
+  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.2);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Tablet Layout */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .agent-form-wrapper,
+  .upload-list-wrapper {
+    padding: 35px;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 20px 15px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .agent-form-wrapper,
+  .upload-list-wrapper {
+    padding: 25px 15px;
+  }
+
+  .agent-form-wrapper h2,
+  .upload-list-wrapper h2 {
+    font-size: 22px;
+  }
+
+  .agent-form-wrapper input,
+  .upload-list-wrapper input[type="file"] {
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .agent-form-wrapper button,
+  .upload-list-wrapper button {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
