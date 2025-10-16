@@ -1,4 +1,4 @@
-# MERN Stack Assignment — CSTech Infosolutions Pvt. Ltd.
+# MERN Stack Assignment: CSTech Infosolutions Pvt. Ltd.
 Name: Bhuvan Shetty
 This is my submission for the **MERN Stack Developer Internship** assignment.
 The project is built using **MongoDB, Express.js, React.js, and Node.js** and it covers all the core requirements: admin login, agent management, and CSV upload/distribution.
