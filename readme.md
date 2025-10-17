@@ -1,7 +1,14 @@
-# MERN Stack Assignment: CSTech Infosolutions Pvt. Ltd.
-Name: Bhuvan Shetty
-This is my submission for the **MERN Stack Developer Internship** assignment.
-The project is built using **MongoDB, Express.js, React.js, and Node.js** and it covers all the core requirements: admin login, agent management, and CSV upload/distribution.
+# MERN Stack Internship Assignment: CSTech Infosolutions Pvt. Ltd.
+
+ **Name:** Bhuvan Shetty
+ **Demo Video:** [Watch Here](https://drive.google.com/file/d/1GeRgmCAQTtrm_cKctfj4JasdZED0co_P/view?usp=sharing)
+
+---
+
+## Overview
+
+This project is built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)** as part of the internship assignment.
+It implements a simple admin panel where the admin can log in, add agents, upload CSV files, and distribute records equally among agents.
 
 ---
 
@@ -9,98 +16,89 @@ The project is built using **MongoDB, Express.js, React.js, and Node.js** and it
 
 ### Admin Login
 
-* Secure login with **JWT authentication**
-* Verifies credentials from MongoDB
-* Redirects to dashboard after successful login
+* Secure authentication using **JWT**
+* Validates admin credentials from MongoDB
+* Redirects to dashboard after login
 
 ### Agent Management
 
-* Admin can add agents with the following details:
-  * Name
-  * Email
-  * Mobile number (with country code)
-  * Password
-* Agents are stored in MongoDB for task distribution
+* Add agents with name, email, mobile, and password
+* Data stored in MongoDB for list distribution
 
 ### CSV Upload & Distribution
 
-* Upload a `.csv` file containing:
+* Upload `.csv` file containing:
   * FirstName
   * Phone
   * Notes
-* Validates file format and structure
-* Distributes the uploaded data equally among all agents
-* If the total count isn’t divisible by the number of agents, the remaining items are distributed sequentially
-* Distributed data is saved to MongoDB and displayed on the dashboard
+* Validates format and distributes entries equally among all agents
+* Stores distributed lists in MongoDB and displays them on the frontend
 
 ---
 
 ## Tech Stack
 
-**Frontend:** React (Vite)
-**Backend:** Node.js + Express.js
-**Database:** MongoDB (Atlas)
-**Authentication:** JWT
-**Styling:** CSS
+* **Frontend:** React (Vite)
+* **Backend:** Node.js + Express.js
+* **Database:** MongoDB (Atlas)
+* **Auth:** JWT
+* **Styling:** CSS
 
 ---
 
-## Setup Instructions
+## Setup Guide
 
-### 1. Clone the repository
+1. **Clone the repo**
 
-```bash
-git clone https://github.com/bhuvan2018/mern-assignment-task.git
-cd mern-assignment-task
-```
+   ```bash
+   git clone https://github.com/bhuvan2018/mern-assignment-task.git
+   cd mern-assignment-task
+   ```
 
-### 2. Backend setup
+2. **Backend Setup**
 
-```bash
-cd backend
-npm install
-```
+   ```bash
+   cd backend
+   npm install
+   ```
 
-Create a `.env` file in the backend folder:
+   Create a `.env` file:
 
-```
-PORT=5000
-MONGO_URI=<your-mongo-uri>
-JWT_SECRET=supersecret123
-```
+   ```
+   PORT=5000
+   MONGO_URI=<your-mongo-uri>
+   JWT_SECRET=supersecret123
+   ```
 
-Run the backend:
+   Start server:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
-You should see:
+3. **Frontend Setup**
 
-```
-Server running on port 5000
-MongoDB Connected: ...
-```
+   ```bash
+   cd ../frontend
+   npm install
+   npm run dev
+   ```
 
-### 3. Frontend setup
+   Open [http://localhost:5173](http://localhost:5173)
 
-```bash
-cd ../frontend
-npm install
-npm run dev
-```
+4. **Execution**
 
-Visit [http://localhost:5173](http://localhost:5173)
+Open http://localhost:5173 : for the Login and Dashboard
 
----
-
-## Testing Flow
-
-1. **Login** using your admin credentials (`email` + `password` from MongoDB).
-2. Go to the **Add Agent** section to create agents.
-3. Upload a **CSV** file with valid columns (`FirstName`, `Phone`, `Notes`).
-4. The system automatically distributes the list among all agents.
-5. Check **Distributed Lists** to view assigned data for each agent.
+Visit http://localhost:5173/lists : to view distributed lists per agent
 
 ---
+
+## Flow
+
+1. Login using admin credentials
+2. Add agents
+3. Upload CSV file
+4. View distributed lists on dashboard
+
 ---
