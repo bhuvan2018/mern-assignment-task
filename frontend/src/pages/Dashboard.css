@@ -1,4 +1,3 @@
-/* Dashboard Container */
 body {
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ body {
   padding: 40px 20px;
 }
 
-/* Main Content Grid */
 .dashboard-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,7 +19,6 @@ body {
   margin: 0 auto;
 }
 
-/* Dashboard Header */
 .dashboard-header {
   grid-column: 1 / -1;
   display: flex;
@@ -55,7 +52,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Form Wrappers */
 .agent-form-wrapper,
 .upload-list-wrapper {
   background: white;
@@ -84,7 +80,6 @@ body {
   }
 }
 
-/* Headings */
 .agent-form-wrapper h2,
 .upload-list-wrapper h2 {
   font-size: 26px;
@@ -105,14 +100,12 @@ body {
   border-radius: 2px;
 }
 
-/* Form Styles */
 .agent-form-wrapper form,
 .upload-list-wrapper form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input Fields */
 .agent-form-wrapper input,
 .upload-list-wrapper input[type="file"] {
   padding: 14px 16px;
@@ -141,7 +134,6 @@ body {
   font-weight: 500;
 }
 
-/* File Input Button */
 .upload-list-wrapper input[type="file"]::file-selector-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -164,7 +156,6 @@ body {
   border: 2px dashed #667eea;
 }
 
-/* Buttons */
 .agent-form-wrapper button,
 .upload-list-wrapper button {
   padding: 14px 16px;
@@ -194,7 +185,6 @@ body {
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
 }
 
-/* Disabled State */
 .upload-list-wrapper button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
@@ -222,7 +212,6 @@ body {
   }
 }
 
-/* Messages */
 .success-message {
   background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
   color: #1a5f3f;
@@ -268,7 +257,6 @@ body {
   }
 }
 
-/* Tablet Layout */
 @media (max-width: 1024px) {
   .dashboard-content {
     grid-template-columns: 1fr;
@@ -281,7 +269,6 @@ body {
   }
 }
 
-/* Mobile Layout */
 @media (max-width: 480px) {
   .dashboard-container {
     padding: 20px 15px;

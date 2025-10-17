@@ -1,4 +1,3 @@
-/* AgentForm Container */
 .agent-form-wrapper {
   background: white;
   border-radius: 14px;
@@ -38,13 +37,11 @@
   border-radius: 2px;
 }
 
-/* Form Container */
 .agent-form-wrapper form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input Fields */
 .agent-form-wrapper input {
   padding: 14px 16px;
   margin-bottom: 16px;
@@ -70,7 +67,6 @@
   font-weight: 500;
 }
 
-/* Submit Button */
 .agent-form-wrapper button {
   padding: 14px 16px;
   margin-top: 8px;
@@ -97,7 +93,6 @@
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
 }
 
-/* Success Message */
 .agent-form-wrapper .success-message {
   background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
   color: #1a5f3f;
@@ -109,7 +104,6 @@
   box-shadow: 0 4px 12px rgba(132, 250, 176, 0.2);
 }
 
-/* Error Message */
 .agent-form-wrapper .error-message {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   color: white;
@@ -144,7 +138,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
   .agent-form-wrapper {
     padding: 30px 20px;

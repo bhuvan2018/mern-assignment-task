@@ -3,9 +3,6 @@ import Assignment from "../models/Assignment.js";
 import fs from "fs";
 import { parse } from "csv-parse";
 
-// ======================
-// Upload CSV and Distribute Lists
-// ======================
 export const uploadCSV = async (req, res) => {
   try {
     if (!req.file) {
@@ -15,12 +12,10 @@ export const uploadCSV = async (req, res) => {
     const results = [];
     const filePath = req.file.path;
 
-    // Parse CSV
     fs.createReadStream(filePath)
       .pipe(parse({ columns: true, skip_empty_lines: true }))
       .on("data", (row) => results.push(row))
       .on("end", async () => {
-        // Validate columns
         const requiredCols = ["FirstName", "Phone", "Notes"];
         const firstRow = results[0];
         if (!firstRow || !requiredCols.every(col => Object.keys(firstRow).includes(col))) {
@@ -74,9 +69,6 @@ export const uploadCSV = async (req, res) => {
   }
 };
 
-// ======================
-// Get All Distributed Lists (for frontend dashboard)
-// ======================
 export const getAssignments = async (req, res) => {
   try {
     const assignments = await Assignment.find()
