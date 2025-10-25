@@ -14,7 +14,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://crmwebtask.onrender.com"
+  "https://crmwebtaskdeploy.onrender.com"
 ];
 
 app.use(cors({
